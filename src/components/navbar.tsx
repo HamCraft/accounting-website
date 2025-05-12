@@ -32,10 +32,10 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-1">
           <div className="flex items-center">
             <Image
-            src={"/logo.png"}
+            src={"/logo_2.png"}
             alt="Logo"
-            width={80}
-            height={80}
+            width={120}
+            height={150}
             priority
             />
             {/* <div className="grid place-items-center w-8 h-8">
@@ -47,7 +47,7 @@ export default function Navbar() {
                   ))}
               </div>
             </div> */}
-            <span className="font-semibold text-gray-800 ml-2 text-3xl">Taxation</span>
+            {/* <span className="font-semibold text-gray-800 ml-2 text-3xl">Taxation</span> */}
           </div>
         </Link>
 
@@ -71,7 +71,7 @@ export default function Navbar() {
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
             <Button variant="ghost" size="icon" aria-label="Menu">
-              <Menu className="h-6 w-6" />
+              <Menu className="h-11 w-11" />
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-[250px] sm:w-[300px]">

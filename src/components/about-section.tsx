@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 
 export default function AboutSection() {
   return (
-    <section className="py-16 bg-gray-50" id="about">
+    <section className="py-16 bg-gray-50 " id="about">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About Us</h2>
