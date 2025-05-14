@@ -11,7 +11,7 @@ export default function Home() {
     <main className="min-h-screen  flex flex-col">
       <div className="bg-[#f5f8fa] py-2 px-4 flex justify-end items-center ">
         <div className="max-w-7xl w-full mx-auto flex justify-end items-center">
-          <div className="text-1xl font-semibold">Call Us: +19728858655</div>
+          <div className="text-1xl font-semibold">Call Us: (972) 885-8655</div>
         </div>
       </div>
 

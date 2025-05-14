@@ -8,7 +8,7 @@ export default function HeroSection() {
     <section className="flex-1 bg-[#f5f8fa]">
       <div className="max-w-7xl mx-auto px-4 py-12 md:py-20 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 mb-8 md:mb-0">
-          <h1 className="text-4xl md:text-4xl font-bold text-gray-800 mb-4">Taxsation, No Frustration.</h1>
+          <h1 className="text-4xl md:text-4xl font-bold text-gray-800 mb-4">Your Financial Peace Starts Here</h1>
           <p className="text-gray-600 mb-8 max-w-md text-2xl">
             We offer services for business owners and individuals.
           </p>

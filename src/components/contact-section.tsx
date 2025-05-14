@@ -82,7 +82,7 @@ export default function ContactSection() {
                 </div>
                 <div className="ml-4">
                   <h4 className="text-lg font-medium">Call Us</h4>
-                  <p className="text-gray-600">+19728858655</p>
+                  <p className="text-gray-600">(972) 885-8655</p>
                 </div>
               </div>
 
