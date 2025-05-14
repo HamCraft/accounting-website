@@ -3,11 +3,12 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "luc
 
 export default function Footer() {
   return (
-    <footer className="bg-[#3EB7B1] text-white py-12 px-4">
+    <section className="pt-48 ">
+    <footer className="bg-[#3EB7B1] text-white py-12 px-4 ">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-xl font-semibold mb-4">TrulyNest</h3>
+            <h3 className="text-xl font-semibold mb-4">Taxsation</h3>
             <p className="text-white/90 mb-6">
               Professional accounting services for businesses and individuals. We provide expert financial guidance and
               personalized solutions.
@@ -66,6 +67,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="#services" className="hover:underline">
+                  Services
+                </Link>
+              </li>
+              <li>
                 <Link href="#contact" className="hover:underline">
                   Contact
                 </Link>
@@ -93,7 +99,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-white/20 text-center md:text-left md:flex md:justify-between md:items-center">
-          <p>© {new Date().getFullYear()} TrulyNest. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Taxsation. All rights reserved.</p>
           <div className="mt-4 md:mt-0">
             <Link href="/privacy" className="hover:underline mr-4">
               Privacy Policy
@@ -105,5 +111,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </section>
   )
 }

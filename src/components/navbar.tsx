@@ -2,10 +2,11 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
-import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import Image from "next/image"
+import { Menu } from "lucide-react"
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -24,7 +25,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`bg-white py-4 px-4 border-b sticky top-0 z-50 transition-all duration-300 ${
+      className={`bg-white py-4 px-4 border-b h-[70px] md:h-[100px] sticky top-0 z-50 transition-all duration-300 ${
         scrolled ? "shadow-md" : ""
       }`}
     >
@@ -34,9 +35,10 @@ export default function Navbar() {
             <Image
             src={"/logo_2.png"}
             alt="Logo"
-            width={120}
-            height={150}
+            width={40}
+            height={50}
             priority
+            className="md:w-[100px] md:h-[80px] w-12 h-12"
             />
             {/* <div className="grid place-items-center w-8 h-8">
               <div className="w-6 h-6 bg-[#3EB7B1] grid grid-cols-3 gap-[2px]">
@@ -61,6 +63,10 @@ export default function Navbar() {
             About
             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#2a7c78] transform scale-x-0 transition-transform group-hover:scale-x-100"></span>
           </Link>
+          <Link href="#services" className="font-medium relative group">
+            Services
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#2a7c78] transform scale-x-0 transition-transform group-hover:scale-x-100"></span>
+          </Link>
           <Link href="#contact" className="font-medium relative group">
             Contact
             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#2a7c78] transform scale-x-0 transition-transform group-hover:scale-x-100"></span>
@@ -71,7 +77,7 @@ export default function Navbar() {
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
             <Button variant="ghost" size="icon" aria-label="Menu">
-              <Menu className="h-11 w-11" />
+              <Menu size={48} strokeWidth={3} />
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-[250px] sm:w-[300px]">
@@ -82,6 +88,10 @@ export default function Navbar() {
               </Link>
               <Link href="#about" className="font-medium text-lg relative group" onClick={() => setIsOpen(false)}>
                 About
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#2a7c78] transform scale-x-0 transition-transform group-hover:scale-x-100"></span>
+              </Link>
+              <Link href="#services" className="font-medium text-lg relative group" onClick={() => setIsOpen(false)}>
+                Services
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#2a7c78] transform scale-x-0 transition-transform group-hover:scale-x-100"></span>
               </Link>
               <Link href="#contact" className="font-medium text-lg relative group" onClick={() => setIsOpen(false)}>

@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Taxation",
+  title: "Taxsation",
   description: "Your trusted partner in accounting and tax services",
 };
 
