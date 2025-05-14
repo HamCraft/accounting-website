@@ -13,7 +13,7 @@ export default function Footer() {
               Professional accounting services for businesses and individuals. We provide expert financial guidance and
               personalized solutions.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <Link
                 href="https://facebook.com"
                 target="_blank"
@@ -50,7 +50,7 @@ export default function Footer() {
               >
                 <Linkedin size={20} />
               </Link>
-            </div>
+            </div> */}
           </div>
 
           <div>
@@ -88,26 +88,26 @@ export default function Footer() {
               </div>
               <div className="flex items-start">
                 <Phone className="mr-3 h-5 w-5 flex-shrink-0" />
-                <span>(400) 856-4500</span>
+                <span>+19728858655</span>
               </div>
               <div className="flex items-start">
                 <Mail className="mr-3 h-5 w-5 flex-shrink-0" />
-                <span>info@churchillsullivan.com</span>
+                <span>info@Taxsation.com</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/20 text-center md:text-left md:flex md:justify-between md:items-center">
+        <div className="pt-8 border-t border-white/20 text-center md:text-left md:flex md:justify-center md:items-center">
           <p>© {new Date().getFullYear()} Taxsation. All rights reserved.</p>
-          <div className="mt-4 md:mt-0">
+          {/* <div className="mt-4 md:mt-0">
             <Link href="/privacy" className="hover:underline mr-4">
               Privacy Policy
             </Link>
             <Link href="/terms" className="hover:underline">
               Terms of Service
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

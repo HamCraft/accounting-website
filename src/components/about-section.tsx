@@ -13,21 +13,28 @@ export default function AboutSection() {
           <div>
             <h3 className="text-2xl font-semibold mb-4">Taxsation Accounting</h3>
             <p className="text-gray-600 mb-6">
-              With over 20 years of experience, Taxsation provides expert accounting services to businesses
-              and individuals. Our team of certified professionals is dedicated to helping you achieve your financial
-              goals.
+              Most accounting companies charge premium fees—not because your taxes are complex, but because their business is.
+
+              You’re paying for their downtown offices, bloated staff, and fancy coffee machines… not for better service.
+
+              At Taxsation, we do things differently.
+
+              We’re a lean, transparent, and experienced accounting firm focused on what actually matters: saving you money, keeping you compliant, and giving you peace of mind.
+
+              No fluff. No surprise fees. Just personal attention and results that speak for themselves.
+
+              Let’s make tax season stress-free.
+              Call or message Taxsation now for your free consultation.
+
+              Your money deserves smarter handling—not higher markups.
             </p>
-            <p className="text-gray-600 mb-6">
-              We believe in building long-term relationships with our clients based on trust, reliability, and
-              exceptional service. Our personalized approach ensures that we understand your unique needs and provide
-              tailored solutions.
-            </p>
+            
             {/* <Button className="bg-[#3EB7B1] hover:bg-[#35a19c] text-white">Learn More</Button> */}
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="text-[#3EB7B1] text-4xl font-bold mb-2">20+</div>
+              <div className="text-[#3EB7B1] text-4xl font-bold mb-2">10+</div>
               <p className="text-gray-600">Years of Experience</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -35,8 +42,8 @@ export default function AboutSection() {
               <p className="text-gray-600">Satisfied Clients</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="text-[#3EB7B1] text-4xl font-bold mb-2">15</div>
-              <p className="text-gray-600">Expert Accountants</p>
+              <div className="text-[#3EB7B1] text-4xl font-bold mb-2">100+</div>
+              <p className="text-gray-600">Projects Completed</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="text-[#3EB7B1] text-4xl font-bold mb-2">24/7</div>

@@ -18,19 +18,19 @@ export default function ContactSection() {
 
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <form action="https://formspree.io/f/xkgrzjya" method="POST" className="space-y-6">
+            <form action="https://formspree.io/f/xqaqwegy" method="POST" className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                     Name
                   </label>
-                  <Input id="name" placeholder="Your name" />
+                  <Input id="name" placeholder="Your name" required/>
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                     Email
                   </label>
-                  <Input id="email" type="email" placeholder="Your email" />
+                  <Input id="email" type="email" name="email" placeholder="Your email" required/>
                 </div>
               </div>
 
@@ -38,14 +38,14 @@ export default function ContactSection() {
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
                   Subject
                 </label>
-                <Input id="subject" placeholder="How can we help you?" />
+                <Input id="subject" placeholder="How can we help you?" required />
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                   Message
                 </label>
-                <Textarea name="message" id="message" placeholder="Your message" className="min-h-[150px]" />
+                <Textarea name="message" id="message" placeholder="Your message" className="min-h-[150px]" required />
               </div>
 
               <Button type="submit" className="w-full bg-[#3EB7B1] hover:bg-[#35a19c] text-white">Send Message</Button>
@@ -72,7 +72,7 @@ export default function ContactSection() {
                 </div>
                 <div className="ml-4">
                   <h4 className="text-lg font-medium">Email Us</h4>
-                  <p className="text-gray-600">info@trulynest.com</p>
+                  <p className="text-gray-600">info@Taxsation.com</p>
                 </div>
               </div>
 
@@ -82,7 +82,7 @@ export default function ContactSection() {
                 </div>
                 <div className="ml-4">
                   <h4 className="text-lg font-medium">Call Us</h4>
-                  <p className="text-gray-600">(400) 856-4500</p>
+                  <p className="text-gray-600">+19728858655</p>
                 </div>
               </div>
 

@@ -1,5 +1,6 @@
 import { Calculator, FileText, BarChart3, PieChart, Receipt, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function ServicesSection() {
   return (
@@ -32,23 +33,29 @@ export default function ServicesSection() {
               </li>
               <li className="flex items-start">
                 <span className="text-[#3EB7B1] mr-2">•</span>
-                <span>Tax Planning & Strategy</span>
+                <span>Partnerships(1065)</span>
               </li>
               <li className="flex items-start">
                 <span className="text-[#3EB7B1] mr-2">•</span>
-                <span>IRS Representation</span>
+                <span>Corporations(1120)</span>
               </li>
               <li className="flex items-start">
                 <span className="text-[#3EB7B1] mr-2">•</span>
-                <span>Tax Compliance</span>
+                <span>Corporations(1120S)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#3EB7B1] mr-2">•</span>
+                <span>W-2 and 1099 Processing</span>
               </li>
             </ul>
+            <Link href="#contact">
             <Button
               variant="outline"
               className="border-[#3EB7B1] text-[#3EB7B1] hover:bg-[#3EB7B1] hover:text-white transition-colors duration-300"
             >
               Learn More
             </Button>
+            </Link>
           </div>
 
           {/* Bookkeeping Services */}
@@ -82,12 +89,14 @@ export default function ServicesSection() {
                 <span>Payroll Processing</span>
               </li>
             </ul>
+            <Link href="#contact">
             <Button
               variant="outline"
               className="border-[#3EB7B1] text-[#3EB7B1] hover:bg-[#3EB7B1] hover:text-white transition-colors duration-300"
             >
               Learn More
             </Button>
+            </Link>
           </div>
 
           {/* Financial Advisory */}
@@ -117,12 +126,14 @@ export default function ServicesSection() {
                 <span>Investment Consulting</span>
               </li>
             </ul>
+           <Link href="#contact">
             <Button
               variant="outline"
               className="border-[#3EB7B1] text-[#3EB7B1] hover:bg-[#3EB7B1] hover:text-white transition-colors duration-300"
             >
               Learn More
             </Button>
+            </Link>
           </div>
 
           {/* Business Consulting */}
@@ -152,16 +163,18 @@ export default function ServicesSection() {
                 <span>Growth Planning</span>
               </li>
             </ul>
+           <Link href="#contact">
             <Button
               variant="outline"
               className="border-[#3EB7B1] text-[#3EB7B1] hover:bg-[#3EB7B1] hover:text-white transition-colors duration-300"
             >
               Learn More
             </Button>
+            </Link>
           </div>
 
           {/* Audit & Assurance */}
-          <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:translate-y-[-5px] hover:border-[#3EB7B1]/30">
+          {/* <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:translate-y-[-5px] hover:border-[#3EB7B1]/30">
             <div className="bg-[#3EB7B1]/10 p-3 rounded-full w-fit mb-6">
               <PieChart className="h-8 w-8 text-[#3EB7B1]" />
             </div>
@@ -187,13 +200,15 @@ export default function ServicesSection() {
                 <span>Fraud Investigation</span>
               </li>
             </ul>
+            <Link href="#contact">
             <Button
               variant="outline"
               className="border-[#3EB7B1] text-[#3EB7B1] hover:bg-[#3EB7B1] hover:text-white transition-colors duration-300"
             >
               Learn More
             </Button>
-          </div>
+            </Link>
+          </div> */}
 
           {/* Payroll Services */}
           <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:translate-y-[-5px] hover:border-[#3EB7B1]/30">
@@ -222,12 +237,14 @@ export default function ServicesSection() {
                 <span>Time & Attendance</span>
               </li>
             </ul>
+           <Link href="#contact">
             <Button
               variant="outline"
               className="border-[#3EB7B1] text-[#3EB7B1] hover:bg-[#3EB7B1] hover:text-white transition-colors duration-300"
             >
               Learn More
             </Button>
+            </Link>
           </div>
         </div>
       </div>
