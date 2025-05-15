@@ -1,11 +1,81 @@
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin } from "lucide-react"
+"use client"
+
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactSection() {
+  const [email, setEmail] = useState("");
+  const [isEmailValid, setIsEmailValid] = useState<boolean | null>(null);
+  const [emailError, setEmailError] = useState("");
+  const [isVerifying, setIsVerifying] = useState(false);
+  const [debounceTimeout, setDebounceTimeout] = useState<NodeJS.Timeout | null>(null);
+
+  const verifyEmail = async (email: string) => {
+    setIsVerifying(true);
+    setEmailError("");
+    
+    try {
+      const response = await fetch("/api/verify-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok && data.isValid) {
+        setIsEmailValid(true);
+        setEmailError("");
+      } else {
+        setIsEmailValid(false);
+        setEmailError(data.message || "Please enter a valid, deliverable email address");
+      }
+    } catch (error) {
+      setIsEmailValid(false);
+      setEmailError("Error verifying email. Please try again.");
+    } finally {
+      setIsVerifying(false);
+    }
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newEmail = e.target.value;
+    setEmail(newEmail);
+    setIsEmailValid(null); // Reset validation state
+    setEmailError("");
+    
+    // Debounce verification to avoid rapid API calls
+    if (debounceTimeout) {
+      clearTimeout(debounceTimeout);
+    }
+    
+    if (newEmail) {
+      const timeout = setTimeout(() => verifyEmail(newEmail), 500); // 500ms debounce
+      setDebounceTimeout(timeout);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    if (!isEmailValid) {
+      e.preventDefault();
+      setEmailError("Please verify your email before submitting");
+    }
+  };
+
+  // Cleanup debounce timeout on component unmount
+  useEffect(() => {
+    return () => {
+      if (debounceTimeout) {
+        clearTimeout(debounceTimeout);
+      }
+    };
+  }, [debounceTimeout]);
+
   return (
-    <section className="pt-48 w-full  bg-white" id="contact">
+    <section className="pt-48 w-full bg-white" id="contact">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
@@ -18,19 +88,40 @@ export default function ContactSection() {
 
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <form action="https://formspree.io/f/xqaqwegy" method="POST" className="space-y-6">
+            <form
+              action="https://formspree.io/f/xqaqwegy"
+              method="POST"
+              className="space-y-6"
+              onSubmit={handleSubmit}
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                     Name
                   </label>
-                  <Input id="name" placeholder="Your name" required/>
+                  <Input id="name" placeholder="Your name" required />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                     Email
                   </label>
-                  <Input id="email" type="email" name="email" placeholder="Your email" required/>
+                  <Input
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="Your email"
+                    value={email}
+                    onChange={handleEmailChange}
+                    required
+                    className={emailError ? "border-red-500" : ""}
+                  />
+                  {isVerifying && <p className="text-gray-600 text-sm mt-1">Verifying email...</p>}
+                  {isEmailValid === false && emailError && (
+                    <p className="text-red-500 text-sm mt-1">{emailError}</p>
+                  )}
+                  {isEmailValid && !isVerifying && (
+                    <p className="text-green-500 text-sm mt-1">Email verified successfully</p>
+                  )}
                 </div>
               </div>
 
@@ -48,7 +139,13 @@ export default function ContactSection() {
                 <Textarea name="message" id="message" placeholder="Your message" className="min-h-[150px]" required />
               </div>
 
-              <Button type="submit" className="w-full bg-[#3EB7B1] hover:bg-[#35a19c] text-white">Send Message</Button>
+              <Button
+                type="submit"
+                className="w-full bg-[#3EB7B1] hover:bg-[#35a19c] text-white"
+                disabled={isVerifying || isEmailValid === null || !isEmailValid}
+              >
+                Send Message
+              </Button>
             </form>
           </div>
 
@@ -96,5 +193,5 @@ export default function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
