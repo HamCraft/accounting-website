@@ -15,7 +15,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Taxsation",
-  description: "Your trusted partner in accounting and tax services",
+  description: "Your trusted partner in Bookkeeping , accounting and tax services",
 };
 
 export default function RootLayout({

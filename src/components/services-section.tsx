@@ -3,8 +3,21 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 export default function ServicesSection() {
+
+  const bookkeepingSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Bookkeeping",
+    "provider": { "@type": "Organization", "name": "Taxsation" },
+    "description": "Affordable bookkeeping services starting at $149.99 for accurate financial records.",
+  };
+  
   return (
     <section className="pt-48 pb-5 bg-gray-50" id="services">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bookkeepingSchema) }}
+      />
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
@@ -15,7 +28,50 @@ export default function ServicesSection() {
           </p>
         </div>
 
+        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Bookkeeping Services */}
+          <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:translate-y-[-5px] hover:border-[#3EB7B1]/30 relative overflow-hidden">
+            <div className="absolute top-0 right-0 bg-[#3EB7B1] text-white py-1 px-4 rounded-bl-lg font-medium text-sm">
+              Starting at $149.99
+            </div>
+            <div className="bg-[#3EB7B1]/10 p-3 rounded-full w-fit mb-6">
+              <Calculator className="h-8 w-8 text-[#3EB7B1]" />
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Bookkeeping</h3>
+            <p className="text-gray-600 mb-4">
+              Our bookkeeping services help you maintain accurate financial records and provide insights into your
+              business performance.
+            </p>
+            <ul className="space-y-2 mb-6">
+              <li className="flex items-start">
+                <span className="text-[#3EB7B1] mr-2">•</span>
+                <span>Monthly Financial Statements</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#3EB7B1] mr-2">•</span>
+                <span>Accounts Payable & Receivable</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#3EB7B1] mr-2">•</span>
+                <span>Bank Reconciliation</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#3EB7B1] mr-2">•</span>
+                <span>Payroll Processing</span>
+              </li>
+            </ul>
+            <Link href="#contact">
+            <Button
+              variant="outline"
+              className="border-[#3EB7B1] text-[#3EB7B1] hover:bg-[#3EB7B1] hover:text-white transition-colors duration-300"
+            >
+              Learn More
+            </Button>
+            </Link>
+          </div>
+
           {/* Tax Services */}
           <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:translate-y-[-5px] hover:border-[#3EB7B1]/30">
             <div className="bg-[#3EB7B1]/10 p-3 rounded-full w-fit mb-6">
@@ -58,46 +114,7 @@ export default function ServicesSection() {
             </Link>
           </div>
 
-          {/* Bookkeeping Services */}
-          <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:translate-y-[-5px] hover:border-[#3EB7B1]/30 relative overflow-hidden">
-            <div className="absolute top-0 right-0 bg-[#3EB7B1] text-white py-1 px-4 rounded-bl-lg font-medium text-sm">
-              Starting at $149.99
-            </div>
-            <div className="bg-[#3EB7B1]/10 p-3 rounded-full w-fit mb-6">
-              <Calculator className="h-8 w-8 text-[#3EB7B1]" />
-            </div>
-            <h3 className="text-xl font-semibold mb-3">Bookkeeping</h3>
-            <p className="text-gray-600 mb-4">
-              Our bookkeeping services help you maintain accurate financial records and provide insights into your
-              business performance.
-            </p>
-            <ul className="space-y-2 mb-6">
-              <li className="flex items-start">
-                <span className="text-[#3EB7B1] mr-2">•</span>
-                <span>Monthly Financial Statements</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#3EB7B1] mr-2">•</span>
-                <span>Accounts Payable & Receivable</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#3EB7B1] mr-2">•</span>
-                <span>Bank Reconciliation</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#3EB7B1] mr-2">•</span>
-                <span>Payroll Processing</span>
-              </li>
-            </ul>
-            <Link href="#contact">
-            <Button
-              variant="outline"
-              className="border-[#3EB7B1] text-[#3EB7B1] hover:bg-[#3EB7B1] hover:text-white transition-colors duration-300"
-            >
-              Learn More
-            </Button>
-            </Link>
-          </div>
+          
 
           {/* Financial Advisory */}
           <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 hover:translate-y-[-5px] hover:border-[#3EB7B1]/30">

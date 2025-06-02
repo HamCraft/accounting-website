@@ -13,6 +13,24 @@ export default function ContactSection() {
   const [isVerifying, setIsVerifying] = useState(false);
   const [debounceTimeout, setDebounceTimeout] = useState<NodeJS.Timeout | null>(null);
 
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Taxsation",
+    "telephone": "(972) 885-8655",
+    // "address": {
+    //   "@type": "PostalAddress",
+    //   "streetAddress": "123 Accounting Street",
+    //   "addressLocality": "Financial District",
+    //   "addressRegion": "NY",
+    //   "postalCode": "10004",
+    //   "addressCountry": "US",
+    // },
+    "url": "https://taxsation.com",
+    "description": "Contact Taxsation for expert bookkeeping, tax preparation, and accounting services.",
+  };
+
   const verifyEmail = async (email: string) => {
     setIsVerifying(true);
     setEmailError("");
@@ -76,6 +94,10 @@ export default function ContactSection() {
 
   return (
     <section className="pt-48 w-full bg-white" id="contact">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
