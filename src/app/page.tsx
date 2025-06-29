@@ -5,6 +5,7 @@ import HeroSection from '@/components/hero-section';
 import AboutSection from '@/components/about-section';
 import ContactSection from '@/components/contact-section';
 import ServicesSection from '@/components/services-section';
+import WhatsAppButton from '@/components/whatsap-button';
 
 export const metadata: Metadata = {
   title: 'Taxsation | Expert Bookkeeping & Tax Services',
@@ -32,6 +33,7 @@ export default function Home() {
       <ServicesSection />
       <ContactSection />
       <Footer />
+      <WhatsAppButton/>
     </main>
   );
 }
